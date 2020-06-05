@@ -3,7 +3,7 @@
     <TheNavbar/>
 <!--     <img src="./assets/logo.png">-->
     <div class="container">
-      <router-view v-show="showPage" @ready="pageReady"/>
+      <router-view :key="$route.path" v-show="showPage" @ready="pageReady"/>
       <AppSpinner v-show="!showPage"/>
     </div>
   </div>
