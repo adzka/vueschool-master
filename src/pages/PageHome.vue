@@ -20,11 +20,12 @@ export default {
 
     computed: {
       categories () {
-        return Object.values(this.$store.state.categories)
+        return Object.values(this.$store.state.categories.items)
       }
     },
     methods: {
-      ...mapActions(['fetchAllCategories', 'fetchForums'])
+      ...mapActions('categories', ['fetchAllCategories']),
+      ...mapActions('forums', ['fetchForums'])
     },
     created () {
       this.fetchAllCategories()
@@ -32,25 +33,6 @@ export default {
         .then(() => {
           this.asyncDataStatus_fetched()
         })
-    // },
-    // beforeCreate () {
-    //   console.log('beforeCreate', this.categories)
-    // },
-    // created () {
-    //   console.log('created', this.categories)
-    // },
-    // beforeMount () {
-    //   console.log('beforeMount', this.categories)
-    // },
-    // mounted () {
-    //   console.log('mounted', this.categories, this.$el.innerText)
-    // },
-    // beforeDestroy () {
-    //   console.log('beforeDestroy - turn off listener', this.categories)
-    // },
-    // destroyed () {
-    //   console.log('destroyed', this.categories)
-    // }
     }
 }
 </script>
