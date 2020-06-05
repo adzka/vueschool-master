@@ -3,9 +3,7 @@ import Vuex from 'vuex'
 import actions from './actions'
 import mutations from './mutations'
 import getters from './getters'
-
 Vue.use(Vuex)
-
 export default new Vuex.Store({
   state: {
     categories: {},
@@ -13,7 +11,7 @@ export default new Vuex.Store({
     threads: {},
     posts: {},
     users: {},
-    authId: 'VXjpr2WHa8Ux4Bnggym8QFLdv5C3'
+    authId: null
   },
   getters,
   actions,
